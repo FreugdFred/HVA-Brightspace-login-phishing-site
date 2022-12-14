@@ -2,6 +2,9 @@
 
 This phishing page is a proof of concept and should not be used for any illegal activity!
 
+![image](https://user-images.githubusercontent.com/99695922/207714240-ba838eb2-645c-4b43-85fa-1a69ddc4bb4e.png)
+
+
 The phishing page works on desktop and mobile. Every 24 hours it will send a email with the harvested credentials to  a email of your liking.
 
 This was made with [Tailwind](https://tailwindcss.com/) for the front-end and [Flask](https://flask.palletsprojects.com/en/2.2.x/) for the back-end.
