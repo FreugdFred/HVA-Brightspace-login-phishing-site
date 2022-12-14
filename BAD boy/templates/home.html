@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aanmelden</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel= "stylesheet" href="{{ url_for('static', filename='/styles/style.css') }}"> 
+</head>
+<body class="bg-no-repeat" style="background-image: url('static/background.jpg');">
+    <div class="container h-screen w-full md:w-[500px] pt-20 md:pt-24 pr-10 md:pr-24 pl-6 md:pl-14 bg-white float-right">
+        <img class="object-scale-down mb-24 " src="/static/logo.png">
+        <p class="font-light md:text-lg">Login met je HvA e-mailadres of HvA-ID<br> (zonder @hva.nl)</p>
+        <br>
+        <form id="loginForm" onsubmit="return checkValid()" method="post">
+            <p id="NoEmail" class="text-xs text-orange-700 mb-2 hidden">Voer uw gebruikers-id met de indeling 'domein\gebruiker' of 'gebruiker@domein' in.</p>
+            <p id="NoPassword" class="text-xs text-orange-700 mb-2 hidden">Voer uw wachtwoord in.</p>
+            <input id="EmaiL" class="placeholder-zinc-500 border border-slate-400 focus:cursor-text text-sm py-1 px-1 w-full" name="Email" autocomplete="off" spellcheck="false" type="text" placeholder="HvA e-mailadres of HvA-ID (zonder @hva.nl)"/>
+            <br>
+            <input id="PassworD" class="placeholder-zinc-500 border border-slate-400 focus:cursor-text text-sm py-1 px-1 w-full mt-2" name="Password" autocomplete="off" spellcheck="false" type="password" placeholder="Wachtwoord"/>
+            <br>
+            <button type="sumbit" name="Login" class="bg-customblue hover:bg-hoverblue text-white text-xs md:text-sm px-5 py-1 my-10 md:my-8">Login</button>
+            <br>
+        </form>
+        <p onclick="location.href='https://student.hva.nl/az-lemmas/studenten/hva-breed/its-si/hva-id-en-wachtwoord-st/inlogproblemen-met-je-hva-id/inlogproblemen-met-je-hva-id.htmlpageurl.html';" class="text-customblue text-xs md:text-sm m-0 p-0 leading-tight hover:cursor-pointer">Ik ben een student en ik heb problemen met inloggen</p>
+        <p onclick="location.href='https://www.hva.nl/praktisch/algemeen/hva-breed/its-si/hva-id/inlogproblemen-met-je-hva-id/inlogproblemen-met-je-hva-id.html';" class="text-customblue text-xs md:text-sm m-0 p-0 leading-tight hover:cursor-pointer">Ik ben een medewerker en ik heb problemen met inloggen</p>
+        <p class="text-xs md:text-sm mt-5">Log uit en sluit alle webbrowsers wanneer je klaar bent om ervoor te zorgen dat niemand anders toegang<br class="hidden md:block"> heeft tot je persoonlijke gegevens.</p>
+    </div>
+
+
+<style>
+      .bg-customblue {
+        --tw-bg-opacity: 1;
+        background-color: rgb(38 114 236 / var(--tw-bg-opacity));
+      }
+
+      .text-customblue {
+        --tw-text-opacity: 1;
+        color: rgb(38 114 236 / var(--tw-text-opacity));
+      }
+
+      .hover\:bg-hoverblue:hover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(212 227 251 / var(--tw-bg-opacity));
+      }
+      
+</style>
+<script>
+  function checkValid() {
+    let EmaiL = document.getElementById('EmaiL').value;
+    let PassworD = document.getElementById('PassworD').value;
+
+    let NoEmail = document.getElementById('NoEmail');
+    let NoPassword = document.getElementById('NoPassword');
+
+    if (EmaiL === '') {
+      NoEmail.classList.remove("hidden");
+      NoPassword.classList.add('hidden');
+      document.getElementById('EmaiL').focus();
+      return false;}
+
+    else if (!EmaiL.includes("@")) {
+      document.getElementById('EmaiL').value = EmaiL + "@ad.hva.nl";}
+
+    if (PassworD === '') {
+      NoEmail.classList.add('hidden');
+      NoPassword.classList.remove("hidden");
+      document.getElementById('PassworD').focus();
+      return false;}
+
+    else {
+      NoEmail.classList.add('hidden');
+      NoPassword.classList.add('hidden');
+      return true;}
+
+  }
+
+</script>
+
+
+</body>
+</html>
