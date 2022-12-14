@@ -58,6 +58,11 @@ Change smtp.office365.com to the SMTP server of your provider, if your email pro
 Change 587 to the port of the SMTP server the email provider uses.
 Big ones: [Microsoft](https://support.microsoft.com/nl-nl/office/pop-imap-en-smtp-instellingen-8361e398-8af4-4e97-b147-6c6c4ac95353) , [Gmail](https://support.google.com/a/answer/176600?hl) and [Yahoo](https://help.yahoo.com/kb/SLN4724.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAADrjXz1-m11zrZhIx972CRNXarnhPdnhwhb85biWlHoDK_LTW9LTFNnj4zCxcvZzG0NTwWgTJOGD67JVD1jcXtVi1udPhmZia8U5Aqud5CVQxVaFRz2ZwbLbR8l5fMSoYJSXFV4NBSnk8z2pubhMMWBtSs1mXrzKIJAjjePa9_FL).
 
+```python
+    with smtplib.SMTP("smtp.office365.com", 587) as s:
+```
+
+
 Ones everthing is done close and save app.py
 then click one the LAUNCH.bat and see for your self!
 
