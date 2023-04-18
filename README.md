@@ -63,7 +63,7 @@ Big ones: [Microsoft](https://support.microsoft.com/nl-nl/office/pop-imap-en-smt
 ```
 
 
-Ones everthing is done close and save app.py
+Ones everything is done close and save app.py
 then click one the LAUNCH.bat and see for your self!
 
 
